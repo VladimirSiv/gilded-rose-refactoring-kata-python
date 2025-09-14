@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "gildedrose-refactoring-kata-python"
+version = "0.1.0"
+description = "Example solution to the Gilded Rose Refactoring Kata exercise."
+authors = ["Vladsiv <vladsiv@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+approvaltests = "^15.3.2"
+pytest-approvaltests = "^0.2.4"
+coverage = "^7.10.6"
+pytest-cov = "^7.0.0"
+mypy = "^1.17.1"
+pytest-mock = "^3.15.0"
+pylint = "^3.3.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+modules = [
+    "gilded_rose",
+    "items",
+    "strategies",
+    "exceptions",
+    "utils"
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--cov=gilded_rose",
+    "--cov=items", 
+    "--cov=strategies",
+    "--cov=exceptions",
+    "--cov=utils",
+    "--cov-report=html",
+    "tests/exceptions",
+    "tests/test_gilded_rose_items.py",
+    "tests/test_gilded_rose_approvals.py",
+    "tests/test_gilded_rose_utils.py"
+]
