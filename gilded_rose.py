@@ -44,8 +44,8 @@ class GildedRose:  # pylint: disable=too-few-public-methods
             except InvalidItemException as iie:
                 logger.error("Item invalid %s: %s", item, str(iie))
                 raise
-            except StrategyUpdateException as iue:
-                logger.error("Item update failed %s: %s", item, str(iue))
+            except StrategyUpdateException as sue:
+                logger.error("Item update failed %s: %s", item, str(sue))
                 raise
             except Exception as e:
                 logger.critical("Unexpected error updating item %s: %s", item, str(e))
